@@ -88,12 +88,15 @@ button:hover {
 pre {
     white-space: pre-wrap;
     word-wrap: break-word;
+    word-break: break-all;
 }
 
 #codon-table {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .codon-cell {
@@ -110,4 +113,21 @@ pre {
     background-color: var(--primary-color);
     color: var(--background-color);
     font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .controls, .input-area, .output-area {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .output-area {
+        grid-template-columns: 1fr;
+    }
 }
