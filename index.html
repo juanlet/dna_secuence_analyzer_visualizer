@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Sequence Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DNA Sequence Analyzer</h1>
+        <div class="controls">
+            <div id="tweakpane-container"></div>
+        </div>
+        <div class="input-area">
+            <textarea id="sequence-input" placeholder="Paste a DNA sequence in FASTA format or upload a file..."></textarea>
+            <input type="file" id="file-input" accept=".fasta,.fa,.txt">
+            <button id="analyze-btn">Analyze</button>
+            <button id="reverse-complement-btn">Reverse Complement</button>
+            <button id="export-fasta-btn">Export FASTA</button>
+        </div>
+        <div class="output-area">
+            <div class="sequence-display">
+                <h2>DNA Sequence</h2>
+                <pre><code id="dna-sequence" class="language-plaintext"></code></pre>
+            </div>
+            <div class="protein-display">
+                <h2>Protein Sequence</h2>
+                <pre><code id="protein-sequence" class="language-plaintext"></code></pre>
+            </div>
+            <div class="gc-content-chart">
+                <h2>GC Content</h2>
+                <canvas id="gc-chart"></canvas>
+            </div>
+            <div class="codon-usage-table">
+                <h2>Codon Usage</h2>
+                <div id="codon-table"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tweakpane@3.1.0/dist/tweakpane.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
